@@ -1,4 +1,4 @@
-# Labs: Output Analysis
+# Lab: Output Analysis
 
 This repository uses:
 - **SimPy** (https://github.com/yaesoubilab/SimPy) and
