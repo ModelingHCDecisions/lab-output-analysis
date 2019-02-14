@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import MultiSurvivalModelClasses as Cls
 
 MORTALITY_PROB = 0.1    # probability of death over each time-step
-POP_SIZE = 500         # population size
+POP_SIZE = 100         # population size
 TIME_STEPS = 100        # length of simulation
-ALPHA = 0.1            # significance level for calculating confidence intervals
+ALPHA = 0.05            # significance level for calculating confidence intervals
 NUM_CIs = 100           # number of confidence intervals to visualize
 
 # create a multi cohort object
