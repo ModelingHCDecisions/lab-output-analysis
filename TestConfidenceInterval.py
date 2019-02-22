@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import MultiSurvivalModelClasses as Cls
 
 MORTALITY_PROB = 0.1    # probability of death over each time-step
-POP_SIZE = 100         # population size
+POP_SIZE = 500         # population size
 TIME_STEPS = 100        # length of simulation
 ALPHA = 0.05            # significance level for calculating confidence intervals
 NUM_CIs = 100           # number of confidence intervals to visualize
@@ -20,7 +20,7 @@ multiCohort.simulate(TIME_STEPS)
 # create the figure
 fig = plt.figure('t-confidence intervals')
 plt.title('95% Confidence Intervals')
-plt.xlim([0, 2 * 1 / MORTALITY_PROB])   # range of x-axis
+plt.xlim([0.5*1 / MORTALITY_PROB, 1.5 * 1 / MORTALITY_PROB])   # range of x-axis
 plt.ylim([0, NUM_CIs+1])            # range of y-axis
 
 # add confidence intervals to the figure
