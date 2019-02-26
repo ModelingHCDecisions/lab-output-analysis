@@ -19,7 +19,7 @@ multiCohort = Cls.MultiCohort(
 multiCohort.simulate(TIME_STEPS)
 
 # create the figure
-fig = plt.figure('t-Confidence Intervals')
+fig = plt.figure('t-Confidence Intervals', figsize=(4.5, 4))
 plt.title('Hypothesis Test')
 plt.xlim([0, 2*1/MORTALITY_PROB])   # range of x-axis
 plt.ylim([min(SIM_POP_SIZES) / 10, max(SIM_POP_SIZES) * 10])  # range of y-axis

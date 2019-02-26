@@ -14,8 +14,8 @@ for i in range(2, 11):
     nSimCohorts.append(pow(2, i))
 
 # create the figure
-fig = plt.figure('Prediction Intervals')
-plt.title('95% Prediction Intervals')
+fig = plt.figure('Prediction Intervals', figsize=(4.5, 4))
+plt.title('{:.0%} Prediction Intervals'.format(1-ALPHA))
 plt.xlim([max(1/MORTALITY_PROB - 5, 0), 1/MORTALITY_PROB + 5])   # range of x-axis
 plt.ylim([nSimCohorts[0]/2, nSimCohorts[-1]*2])     # range of y-axis
 

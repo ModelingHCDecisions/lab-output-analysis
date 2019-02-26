@@ -18,8 +18,8 @@ multiCohort = Cls.MultiCohort(
 multiCohort.simulate(TIME_STEPS)
 
 # create the figure
-fig = plt.figure('t-confidence intervals')
-plt.title('95% Confidence Intervals')
+fig = plt.figure('t-confidence intervals', figsize=(4.5, 4))
+plt.title('{:.0%} Confidence Intervals'.format(1-ALPHA))
 plt.xlim([0.5*1 / MORTALITY_PROB, 1.5 * 1 / MORTALITY_PROB])   # range of x-axis
 plt.ylim([0, NUM_CIs+1])            # range of y-axis
 
@@ -39,5 +39,5 @@ plt.axvline(1 / MORTALITY_PROB, color='b')
 
 # labels
 plt.ylabel('Trials')
-plt.xlabel('Survival time' + ' (true mean = ' + str(1 / MORTALITY_PROB) + ')')
+plt.xlabel('Survival time' + ' (true mean = ' + str(1 / MORTALITY_PROB) + ' years)')
 plt.show()
