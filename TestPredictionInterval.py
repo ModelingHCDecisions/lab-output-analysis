@@ -32,9 +32,9 @@ for n in nSimCohorts:
     multiCohort.simulate(TIME_STEPS)
 
     # get the overall mean of survival times
-    mean = multiCohort.multiCohortOutcomes.sumStat_meanSurvivalTime.get_mean()
+    mean = multiCohort.multiCohortOutcomes.statMeanSurvivalTime.get_mean()
     # get the prediction interval for the mean survival time
-    PI = multiCohort.multiCohortOutcomes.sumStat_meanSurvivalTime.get_PI(ALPHA)
+    PI = multiCohort.multiCohortOutcomes.statMeanSurvivalTime.get_PI(ALPHA)
 
     # find the coordinates of the estimated mean and confidence intervals
     mean_x = mean   # mean of mean survival times
