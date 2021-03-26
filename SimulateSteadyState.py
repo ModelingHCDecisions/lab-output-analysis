@@ -28,10 +28,6 @@ Hist.plot_histogram(
     y_label='Count')
 
 # create a summary statistics for observations of survival times
-survivalTimeStat = Stat.SummaryStat(name='Summary statistics of survival time',
-                                    data=myCohort.cohortOutcomes.survivalTimes)
 
 # print the summary statistics
-print('Mean survival time (years):', survivalTimeStat.get_mean())
-print('95% confidence interval of mean survival time (years):',
-      survivalTimeStat.get_t_CI(alpha=0.05))
+
