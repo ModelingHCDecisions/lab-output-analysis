@@ -42,8 +42,8 @@ for n in nSimCohorts:
     PI_xs = np.linspace(PI[0], PI[1], 2)  # [lower upper] of the prediction interval
     PI_ys = mean_y * np.ones(2)  # [popSize popSize]
 
-    plt.semilogy(mean_x, mean_y, 'ko', basey=2)  # draw the estimated mean (in log scale)
-    plt.semilogy(PI_xs, PI_ys, 'k', basey=2)     # draw the confidence interval (in log scale)
+    plt.semilogy(mean_x, mean_y, 'ko', base=2)  # draw the estimated mean (in log scale)
+    plt.semilogy(PI_xs, PI_ys, 'k', base=2)     # draw the confidence interval (in log scale)
 
 # labels
 plt.ylabel('Number of simulated cohorts')

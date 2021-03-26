@@ -1,7 +1,7 @@
 import SurvivalModelClasses as Cls
 import SimPy.Plots.SamplePaths as Path
 import SimPy.Plots.Histogram as Hist
-import SimPy.StatisticalClasses as Stat
+import SimPy.Statistics as Stat
 
 MORTALITY_PROB = 0.1    # annual probability of death
 TIME_STEPS = 100        # years
