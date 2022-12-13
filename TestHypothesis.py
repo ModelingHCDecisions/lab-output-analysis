@@ -1,5 +1,7 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+from deampy.plots.plot_support import output_figure
+
 import MultiSurvivalModelClasses as Cls
 
 # to test the hypothesis that true mean survival time is not equal to the null
@@ -19,8 +21,8 @@ multiCohort = Cls.MultiCohort(
 multiCohort.simulate(TIME_STEPS)
 
 # create the figure
-fig = plt.figure('t-Confidence Intervals', figsize=(4.5, 4))
-plt.title('Hypothesis Test')
+fig = plt.figure('t-Confidence Intervals', figsize=(4, 3.5))
+# plt.title('Hypothesis Test')
 plt.xlim([0, 2*1/MORTALITY_PROB])   # range of x-axis
 plt.ylim([min(SIM_POP_SIZES) / 10, max(SIM_POP_SIZES) * 10])  # range of y-axis
 
@@ -37,11 +39,13 @@ for i in range(len(SIM_POP_SIZES) - 1, -1, -1):
     CI_xs = np.linspace(CI[0], CI[1], 2) # [lower upper] of the confidence interval
     CI_ys = mean_y*np.ones(2)    # [popSize popSize]
 
+    print(SIM_POP_SIZES[i], round(0.5*(CI[1]-CI[0]), 3))
+
     plt.semilogy(mean_x, mean_y, 'ko')  # draw the estimated mean (in log scale)
     plt.semilogy(CI_xs, CI_ys, 'k')     # draw the confidence interval (in log scale)
 
 # adding a blue vertical line to show the null value
-plt.axvline(NULL_SURVIVAL_TIME, color='b', linewidth =.5)
+# plt.axvline(NULL_SURVIVAL_TIME, color='b', linewidth =.5)
 # adding a black dashed vertical line to show the true survival mean
 plt.axvline(1/MORTALITY_PROB, color='k', ls='--', linewidth=.5)
 
@@ -50,25 +54,25 @@ axes = plt.gca()
 y_min, y_max = axes.get_ylim()
 
 # adding annotation near the top of the plot, y_max, and close to the vertical line @ 1/MORTALITY_PROB
-plt.annotate('True Unknown Mean ',
+plt.annotate(' True Unknown Mean ',
              xy=(1/MORTALITY_PROB, y_max),
-             xytext=(1/MORTALITY_PROB, y_max),
-             color='k',
-             rotation=90,
-             fontsize=8,
-             verticalalignment='top',
-             horizontalalignment='right', )
-
-plt.annotate('Null Value ',
-             xy=(NULL_SURVIVAL_TIME, y_max),
-             xytext=(NULL_SURVIVAL_TIME, y_max),
+             xytext=(1/MORTALITY_PROB, y_min),
              color='b',
              rotation=90,
-             fontsize=8,
-             verticalalignment='top',
-             horizontalalignment='right')
+             fontsize=7,
+             verticalalignment='bottom',
+             horizontalalignment='right', )
+
+# plt.annotate('Null Value ',
+#              xy=(NULL_SURVIVAL_TIME, y_max),
+#              xytext=(NULL_SURVIVAL_TIME, y_max),
+#              color='b',
+#              rotation=90,
+#              fontsize=8,
+#              verticalalignment='top',
+#              horizontalalignment='right')
 
 # labels
 plt.ylabel('Population size of the simulated cohort')
 plt.xlabel('Mean survival time')
-plt.show()
+output_figure(plt, filename='figs/ci by n.png')
