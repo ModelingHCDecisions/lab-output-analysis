@@ -73,6 +73,6 @@ plt.annotate(' True Unknown Mean ',
 #              horizontalalignment='right')
 
 # labels
-plt.ylabel('Population size of the simulated cohort')
-plt.xlabel('Mean survival time')
+plt.ylabel('Population Size of the Simulated Cohort')
+plt.xlabel('Mean Survival Time')
 output_figure(plt, filename='figs/ci by n.png')

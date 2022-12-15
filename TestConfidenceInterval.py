@@ -50,7 +50,7 @@ def plot_cis(n, alpha):
 
     # labels
     ax.set_ylabel('Trials')
-    ax.set_xlabel('Survival time' + ' (true mean = ' + str(1 / MORTALITY_PROB) + ' years)')
+    ax.set_xlabel('Survival Time' + ' (True Mean = ' + str(1 / MORTALITY_PROB) + ' Years)')
     output_figure(plt=fig, filename='figs/{:.0f}ci with n={}.png'.format(100*(1-alpha), n))
 
 

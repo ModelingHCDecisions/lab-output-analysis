@@ -1,7 +1,7 @@
 import SurvivalModelClasses as Cls
-import SimPy.Plots.SamplePaths as Path
-import SimPy.Plots.Histogram as Hist
-import SimPy.Statistics as Stat
+import deampy.plots.sample_paths as path
+import deampy.plots.histogram as hist
+import deampy.statistics as stat
 
 MORTALITY_PROB = 0.1    # annual probability of death
 TIME_STEPS = 100        # years
@@ -14,21 +14,21 @@ myCohort = Cls.Cohort(id=1, pop_size=SIM_POP_SIZE, mortality_prob=MORTALITY_PROB
 myCohort.simulate(n_time_steps=TIME_STEPS)
 
 # plot the sample path
-Path.plot_sample_path(
+path.plot_sample_path(
     sample_path=myCohort.cohortOutcomes.nLivingPatients,
     title='Survival Curve',
     x_label='Time-Step (Year)',
     y_label='Number Survived')
 
 # plot the histogram
-Hist.plot_histogram(
+hist.plot_histogram(
     data=myCohort.cohortOutcomes.survivalTimes,
     title='Histogram of Patient Survival Time',
     x_label='Survival Time (Year)',
     y_label='Count')
 
 # create a summary statistics for observations of survival times
-survivalTimeStat = Stat.SummaryStat(name='Summary statistics of survival time',
+survivalTimeStat = stat.SummaryStat(name='Summary statistics of survival time',
                                     data=myCohort.cohortOutcomes.survivalTimes)
 
 # print the summary statistics
