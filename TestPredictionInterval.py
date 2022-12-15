@@ -1,5 +1,6 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import MultiSurvivalModelClasses as Cls
 
 MORTALITY_PROB = 0.1    # probability of death over each time-step
@@ -49,6 +50,6 @@ plt.axvline(1/MORTALITY_PROB, color='b', ls='--', linewidth=.5)
 
 # labels
 plt.ylabel('Number of Simulated Cohorts')
-plt.xlabel('Survival Time (Years)' + ' (Expected Value = ' + str(1/MORTALITY_PROB) + ')')
+plt.xlabel('Survival Time (Years)') #+ ' (Expected Value = ' + str(1/MORTALITY_PROB) + ')'
 plt.tight_layout()
-plt.savefig('figs/95pi.png', dpi=300)
+plt.savefig('figs/pi by n.png', dpi=300)
