@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-import MultiSurvivalModelClasses as Cls
+from MultiSurvivalModelClasses import MultiCohort
 
 MORTALITY_PROB = 0.1    # probability of death over each time-step
 TIME_STEPS = 100        # length of simulation
@@ -24,7 +24,7 @@ plt.ylim([nSimCohorts[0]/2, nSimCohorts[-1]*2])     # range of y-axis
 for n in nSimCohorts:
 
     # create a multi cohort object
-    multiCohort = Cls.MultiCohort(
+    multiCohort = MultiCohort(
         ids=range(n),
         pop_sizes=[COHORT_POP_SIZE] * n,
         mortality_probs=[MORTALITY_PROB]*n)

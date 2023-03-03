@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from deampy.plots.plot_support import output_figure
 
-import MultiSurvivalModelClasses as Cls
+from MultiSurvivalModelClasses import MultiCohort
 
 # to test the hypothesis that true mean survival time is not equal to the null
 NULL_SURVIVAL_TIME = 9      # null hypothesis
@@ -12,7 +12,7 @@ TIME_STEPS = 100        # length of simulation
 ALPHA = 0.05            # significance level for calculating confidence intervals
 
 # create a multi cohort object
-multiCohort = Cls.MultiCohort(
+multiCohort = MultiCohort(
     ids=[1] * len(SIM_POP_SIZES),  # [1, 1, ..., 1] using the same random number generator seed for all cohorts
     pop_sizes=SIM_POP_SIZES,
     mortality_probs=[MORTALITY_PROB]*len(SIM_POP_SIZES))

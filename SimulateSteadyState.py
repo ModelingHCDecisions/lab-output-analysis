@@ -1,14 +1,15 @@
-import SurvivalModelClasses as Cls
-import deampy.plots.sample_paths as path
 import deampy.plots.histogram as hist
+import deampy.plots.sample_paths as path
 import deampy.statistics as stat
+
+from SurvivalModelClasses import Cohort
 
 MORTALITY_PROB = 0.1    # annual probability of death
 TIME_STEPS = 100        # years
 SIM_POP_SIZE = 1000     # population size of the simulated cohort
 
 # create a cohort
-myCohort = Cls.Cohort(id=1, pop_size=SIM_POP_SIZE, mortality_prob=MORTALITY_PROB)
+myCohort = Cohort(id=1, pop_size=SIM_POP_SIZE, mortality_prob=MORTALITY_PROB)
 
 # simulate the cohort over the specified time steps
 myCohort.simulate(n_time_steps=TIME_STEPS)

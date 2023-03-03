@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from deampy.plots.plot_support import output_figure
 
-import MultiSurvivalModelClasses as Cls
+from MultiSurvivalModelClasses import MultiCohort
 
 MORTALITY_PROB = 0.1    # probability of death over each time-step
 POP_SIZE = 250         # population size
@@ -19,7 +19,7 @@ def plot_cis(n, alpha):
     """
 
     # create a multi cohort object
-    multiCohort = Cls.MultiCohort(
+    multiCohort = MultiCohort(
         ids=range(0, NUM_CIs),  # [0, 1, 2 ..., NUM_CIs]
         pop_sizes=[n] * NUM_CIs,  # [n, n, ..., n]
         mortality_probs=[MORTALITY_PROB] * NUM_CIs)  # [p, p, ....]
