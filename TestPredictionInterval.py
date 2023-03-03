@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from deampy.plots.plot_support import output_figure
 
 from MultiSurvivalModelClasses import MultiCohort
 
@@ -52,4 +53,4 @@ plt.axvline(1/MORTALITY_PROB, color='b', ls='--', linewidth=.5)
 plt.ylabel('Number of Simulated Cohorts')
 plt.xlabel('Survival Time (Years)') #+ ' (Expected Value = ' + str(1/MORTALITY_PROB) + ')'
 plt.tight_layout()
-plt.savefig('figs/pi by n.png', dpi=300)
+output_figure(plt=plt, filename='figs/pi by n.png', dpi=300)
