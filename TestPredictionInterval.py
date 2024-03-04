@@ -18,7 +18,8 @@ for i in range(2, 10):
 # create the figure
 fig = plt.figure('Prediction Intervals', figsize=(4, 3.5))
 plt.title('{:.0%} Prediction Intervals'.format(1-ALPHA))
-plt.xlim([max(1/MORTALITY_PROB - 5, 0), 1/MORTALITY_PROB + 5])   # range of x-axis
+# plt.xlim([max(1/MORTALITY_PROB - 5, 0), 1/MORTALITY_PROB + 5])   # range of x-axis
+plt.xlim([0, 2*1/MORTALITY_PROB])   # range of x-axis
 plt.ylim([nSimCohorts[0]/2, nSimCohorts[-1]*2])     # range of y-axis
 
 # calculate prediction intervals for different number of simulated cohorts

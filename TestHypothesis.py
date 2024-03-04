@@ -22,7 +22,7 @@ multiCohort.simulate(TIME_STEPS)
 
 # create the figure
 fig = plt.figure('t-Confidence Intervals', figsize=(4, 3.5))
-# plt.title('Hypothesis Test')
+plt.title('{:.0%} Confidence Intervals'.format(1-ALPHA))
 plt.xlim([0, 2*1/MORTALITY_PROB])   # range of x-axis
 plt.ylim([min(SIM_POP_SIZES) / 10, max(SIM_POP_SIZES) * 10])  # range of y-axis
 
@@ -47,30 +47,21 @@ for i in range(len(SIM_POP_SIZES) - 1, -1, -1):
 # adding a blue vertical line to show the null value
 # plt.axvline(NULL_SURVIVAL_TIME, color='b', linewidth =.5)
 # adding a black dashed vertical line to show the true survival mean
-plt.axvline(1/MORTALITY_PROB, color='k', ls='--', linewidth=.5)
+plt.axvline(1/MORTALITY_PROB, color='b', ls='--', linewidth=.5)
 
 # get y limits in order to position annotations
 axes = plt.gca()
 y_min, y_max = axes.get_ylim()
 
 # adding annotation near the top of the plot, y_max, and close to the vertical line @ 1/MORTALITY_PROB
-plt.annotate(' True Unknown Mean ',
-             xy=(1/MORTALITY_PROB, y_max),
-             xytext=(1/MORTALITY_PROB, y_min),
-             color='b',
-             rotation=90,
-             fontsize=7,
-             verticalalignment='bottom',
-             horizontalalignment='right', )
-
-# plt.annotate('Null Value ',
-#              xy=(NULL_SURVIVAL_TIME, y_max),
-#              xytext=(NULL_SURVIVAL_TIME, y_max),
+# plt.annotate(' True Unknown Mean ',
+#              xy=(1/MORTALITY_PROB, y_max),
+#              xytext=(1/MORTALITY_PROB, y_min),
 #              color='b',
 #              rotation=90,
-#              fontsize=8,
-#              verticalalignment='top',
-#              horizontalalignment='right')
+#              fontsize=7,
+#              verticalalignment='bottom',
+#              horizontalalignment='right', )
 
 # labels
 plt.ylabel('Population Size of the Simulated Cohort')
