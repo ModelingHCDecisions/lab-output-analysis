@@ -12,7 +12,7 @@ SIM_POP_SIZE = 1000     # population size of the simulated cohort
 myCohort = Cohort(id=1, pop_size=SIM_POP_SIZE, mortality_prob=MORTALITY_PROB)
 
 # simulate the cohort over the specified time steps
-myCohort.simulate(n_time_steps=TIME_STEPS)
+myCohort.simulate(seed=1, n_time_steps=TIME_STEPS)
 
 # plot the sample path
 path.plot_sample_path(

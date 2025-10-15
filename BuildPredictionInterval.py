@@ -16,7 +16,7 @@ multiCohort = MultiCohort(
 )
 
 # simulate all cohorts
-multiCohort.simulate(n_time_steps=TIME_STEPS)
+multiCohort.simulate(seeds=range(N_COHORTS), n_time_steps=TIME_STEPS)
 
 # plot the sample paths
 path.plot_sample_paths(
