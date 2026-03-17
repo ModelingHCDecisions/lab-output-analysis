@@ -34,5 +34,6 @@ survivalTimeStat = stat.SummaryStat(name='Summary statistics of survival time',
 
 # print the summary statistics
 print('Mean survival time (years):', survivalTimeStat.get_mean())
+print('Variance of survival time (years):', survivalTimeStat.get_var())
 print('95% confidence interval of mean survival time (years):',
       survivalTimeStat.get_t_CI(alpha=0.05))
