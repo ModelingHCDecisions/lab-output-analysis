@@ -6,7 +6,7 @@ from SurvivalModelClasses import Cohort
 
 MORTALITY_PROB = 0.1    # annual probability of death
 TIME_STEPS = 100        # years
-SIM_POP_SIZE = 1000     # population size of the simulated cohort
+SIM_POP_SIZE = 600     # population size of the simulated cohort
 
 # create a cohort
 myCohort = Cohort(id=1, pop_size=SIM_POP_SIZE, mortality_prob=MORTALITY_PROB)
@@ -37,3 +37,4 @@ print('Mean survival time (years):', survivalTimeStat.get_mean())
 print('Variance of survival time (years):', survivalTimeStat.get_var())
 print('95% confidence interval of mean survival time (years):',
       survivalTimeStat.get_t_CI(alpha=0.05))
+print('95% half-length: ', survivalTimeStat.get_t_half_length(alpha=0.05))
